@@ -1,0 +1,47 @@
+.cat {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  width: max(20vw, 200px);
+}
+
+.cat:hover {
+  transform: scale(1.1);
+}
+
+.cat:active {
+  transform: scale(1.2);
+}
+
+.container {
+  position: relative;
+}
+
+.hand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.hand img {
+  width: 80%;
+  animation: pat 0.3s infinite alternate ease-in;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+.hand.petting {
+  opacity: 1.0;
+}
+
+@keyframes pat {
+  from {
+    transform: translateY(-30px) translateX(0);
+  }
+  to {
+    transform: translateY(-80px) translateX(15px);
+  }
+}
